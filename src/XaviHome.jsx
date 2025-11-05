@@ -6,18 +6,17 @@ import AOS from 'aos'
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const XaviHome = () => {
+const XaviHome = ({dark}) => {
 
 
-  const [dark, setDark] = useState(false);
-  const toggle = () => setDark(!dark);
+
 
 
   const name = 'XAVISON';
   const abtcntnt = "I'm a Emerging MERN Developer"
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000,once:false });
   }, []);
 
   const navigate = useNavigate();
@@ -40,7 +39,8 @@ const XaviHome = () => {
 
 
           >
-            {name}
+          
+          Hey Guys !
           </Typography>
 
 

@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import AOS from 'aos'
 import { useEffect } from 'react';
 
-const XaviCntact = () => {
+const XaviCntact = ({dark}) => {
 
 
   const contactdata = [
@@ -16,12 +16,12 @@ const XaviCntact = () => {
     { icon: EmailIcon, data: 'xavison03@gmail.com' },
     { icon: InstagramIcon, data: 'xa_vi_03' },
   ];
-  const [dark, setDark] = useState(false)
-  const toggle = () => setDark(!dark)
+  // const [dark, setDark] = useState(false)
+  // const toggle = () => setDark(!dark)
   const buttonBg = dark ? '#6366F1' : '#10B981';
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000,once:false });
   }, []);
   return (
     <div>
@@ -39,8 +39,7 @@ const XaviCntact = () => {
           Contact
         </Typography>
         <Typography className='text-center' data-aos="flip-right"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
+          
           data-aos-duration="2000">
           Ready to build something awesome? Drop me a line and let’s make it happen!
         </Typography>
@@ -104,7 +103,25 @@ const XaviCntact = () => {
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows={3} required />
             </Form.Group>
-            <button type="submit">Submit</button>
+            <button
+  type="submit"
+  style={{
+    backgroundColor: buttonBg,
+    color: 'white',
+    border: 'none',
+    padding: '0.75rem 2rem',
+    borderRadius: '8px',
+    fontSize: '1rem',
+    fontWeight: '600',
+    transition: '0.3s',
+    cursor: 'pointer',
+  }}
+  onMouseEnter={(e) => (e.target.style.opacity = '0.8')}
+  onMouseLeave={(e) => (e.target.style.opacity = '1')}
+>
+  Submit
+</button>
+
           </Form>
         </Box>
       </Box>

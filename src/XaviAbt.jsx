@@ -11,12 +11,22 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import Img1 from '../src/assets/waveimg.png'
 import Img2 from '../src/assets/calcimg.png'
 import Img3 from '../src/assets/spideyportimg.png'
 
-const XaviAbt = ({ dark, toggle }) => {
+
+import Fimg1 from '../src/assets/resp1.png';
+import Fimg2 from '../src/assets/scale2.png'
+import Fimg3 from '../src/assets/eff3.png'
+import Fimg4 from '../src/assets/maintain4.png'
+import Fimg5 from '../src/assets/implement5.png'
+import Fimg6 from '../src/assets/collab6.png'
+
+const XaviAbt = ({ dark }) => {
 
 
 
@@ -37,24 +47,45 @@ const XaviAbt = ({ dark, toggle }) => {
     { projtitle: 'Spidey Portfolio', projcaptn: 'Your friendly neighborhood portfolio — crafted with Bootstrap and web magic.', img: Img3, link: 'https://xavison03.github.io/parkar.io/' }
   ];
 
+  const focusPoints = [
+    {
+      title: "Frontend Development",
+      desc: "Building clean, responsive, and dynamic UIs using React and Tailwind CSS.",
+      img: Fimg1,
+    },
+    {
+      title: "Backend Development",
+      desc: "Designing scalable APIs with Node.js, Express, and MongoDB.",
+      img:Fimg2,
+    },
+    {
+      title: "Performance Optimization",
+      desc: "Creating fast, efficient, and optimized web applications.",
+      img:Fimg3,
+    },
+    {
+      title: "Clean Code & UI/UX",
+      desc: "Writing maintainable code and crafting intuitive user experiences.",
+      img: Fimg4,
+    },
+    {
+      title:" Modern UI",
+      desc:"Implementing modern UI animations and themes",
+      img:Fimg5
+    
+    },
 
-  const abtpoint=[
-      'Building full-stack projects using the MERN stack',
-  'Creating responsive and interactive user interfaces',
-  'Writing clean and maintainable JavaScript code',
-  'Developing backend logic with RESTful APIs',
-  'Implementing modern UI animations and themes',
-  'Optimizing web applications for better performance',
-  'Integrating frontend and backend seamlessly',
-  'Managing MongoDB databases efficiently',
-  'Deploying projects with best practices',
-  'Collaborating effectively on development projects',
-  'Debugging code and fixing issues quickly',
-  'Using Git and version control for organized project workflow',
-    'Debugging and troubleshooting code to improve functionality',
-    ]
+    {
+         title:"Collaboration",
+      desc:"Collaborating effectively on development projects",
+      img:Fimg6
+    }
+  ];
+
+
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000,once:false });
   }, []);
 
 
@@ -82,136 +113,125 @@ const XaviAbt = ({ dark, toggle }) => {
         }}>About</Typography>
       </Box>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Box
-          component="img"
-          src={MyImg}
-          alt="My image"
-          sx={{
-            borderRadius: "12px",
-            boxShadow: "0px 10px 30px rgba(28, 27, 27, 0.98)",
-            transition: "transform 0.4s ease",
-            height: { xs: "20rem", sm: "22rem", md: "24rem", lg: "28rem" },
-            "&:hover": { transform: "scale(1.1)" }
-          }}
-          data-aos="flip-down" data-aos-duration="1500"
-        />
-      </Box>
 
-      <Box sx={{ mt: '3rem', textAlign: 'center',overflowX: 'hidden' }}>
-        <Typography data-aos="fade-down" sx={{ fontWeight: 700, fontSize: '1.5rem' }}>XAVISON</Typography>
-        <Typography data-aos="fade-down" sx={{ marginTop: '30px' ,fontWeight:500, fontSize: { xs: '1rem', md: '1.3rem',lg:'1.5rem' } }}>
-          Crafting intuitive user interfaces and powerful backends with MERN.
-        </Typography>
-      </Box>
-
-
-
-
-
-<Typography
-  data-aos="fade-up"
-  sx={{
-    maxWidth: '800px',
-    mx: 'auto',
-    mt: 4,
-      fontSize: { 
-    xs: '1.2rem',   
-    sm: '1.5rem',   
-    md: '2rem',     
-    lg: '2.5rem',   
-    xl: '1.5rem'      
-  },
-    lineHeight: 1.4,
-    textAlign: 'center',
-    color: dark ? '#d1d5db' : '#333',
-    fontFamily: "Instrument Serif",
-  fontWeight: 400,
-  fontStyle: 'italic',
-letterSpacing:'3px',
-lineHeight:'60px',
-  fontSize: { xs: '1.2rem', md: '1.3rem',lg:'1.5rem' },
-  overflowX: 'hidden'
-
-  }}
->
-  I'm a passionate <strong>MERN Stack Developer</strong> who loves building
-  clean, responsive, and creative web applications. I enjoy turning ideas into real projects that
-  not only look great but also perform smoothly. I work mostly with <strong>React, Node.js, Express,</strong>
-  and <strong>MongoDB</strong> to create full-stack applications. I have completed my <strong>BSc in Computer Science</strong> from
-  <strong> Government Arts and Science College, Konam</strong>.
-</Typography>
-
-<Box
-  sx={{
-    mt: 4,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  }}
- 
->
-  <Typography  sx={{
-          fontFamily: '"Oswald", sans-serif',
-          fontOpticalSizing: 'auto',
-          fontWeight: 700,
-          fontStyle: 'normal',
-          fontSize: '40px'
-        }}  data-aos="fade-up"
-  data-aos-duration="1500">
-    What I Focus On
-  </Typography>
-  <Grid
-    container
-    spacing={2}
-    sx={{
-      maxWidth: '800px',
-      justifyContent: 'center',
-      marginTop:'20px'
-    }}
-     data-aos="fade-up"
-  data-aos-duration="2000"
-  >
-    {abtpoint.map((text, index) => (
-      <Grid item xs={12} md={6} key={index}>
-        <Typography
-          sx={{
-            marginTop:'20px',
-            opacity: 0.9,
-            textAlign: 'center',
-            lineHeight: 1.6,
-            // fontFamily: '"Londrina Solid", sans-serif',
-  fontStyle: 'normal',
-  fontSize:'1.1rem',
-  overflowX: 'hidden'
-          }}
-        >
-          ➤ {text}
-        </Typography>
-      </Grid>
-    ))}
-  </Grid>
-
+<Box>
 
 </Box>
 
 
-<Typography
-  data-aos="fade-up"
-  sx={{
-    mt: 5,
-    fontSize: '1.4rem',
-    lineHeight: 1.8,
-    textAlign: 'center',
-    color: dark ? '#9ca3af' : '#555',
-    maxWidth: '750px',
-    mx: 'auto',
-    overflowX: 'hidden'
-  }}
->
-  I’m always exploring new technologies and improving my skills to create better digital experiences.
-  Every project I work on is a step toward building something meaningful, functional, and visually engaging.
-</Typography>
+    
+
+
+ 
+
+
+
+    <section className="px-4 md:px-10 lg:px-20 text-center overflow-x-hidden">
+    
+      <div className="flex justify-center mt-12">
+        <img
+          src={MyImg}
+          alt="My portrait"
+          data-aos="flip-down"
+          data-aos-duration="1500"
+          className="rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.25)] 
+          transition-transform duration-500 hover:scale-105 
+          h-72 sm:h-80 md:h-96 lg:h-[30rem]"
+        />
+      </div>
+
+      <div className="mt-10">
+        <h2
+          data-aos="fade-down"
+          className="font-['Playfair_Display'] font-bold text-3xl md:text-4xl tracking-wide"
+        >
+          XAVISON
+        </h2>
+
+        <p
+          data-aos="fade-down"
+          className="mt-3 text-gray-500 dark:text-gray-500 font-['Poppins'] 
+          text-base md:text-lg"
+        >
+          MERN Stack Developer | Crafting seamless digital experiences
+        </p>
+      </div>
+
+     
+      <p
+        data-aos="fade-up"
+        className="max-w-3xl mx-auto mt-10 font-['Poppins'] text-gray-500 dark:text-gray-500 
+        text-base md:text-lg leading-relaxed"
+      >
+        I'm a passionate <strong>MERN Stack Developer</strong> who loves creating clean,
+        responsive, and user-focused web applications.  
+        My goal is to bring ideas to life through modern, scalable, and efficient code.
+        I enjoy turning concepts into engaging products that perform beautifully across devices.
+      </p>
+
+     
+      <div className="mt-20">
+        <h3
+          data-aos="fade-up"
+          className="font-['Playfair_Display'] font-bold text-3xl md:text-4xl tracking-wide mb-8"
+        >
+          What I Focus On
+        </h3>
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{ delay: 3500 }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            768: { slidesPerView: 2 }, 
+          }}
+         
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className='p-5'
+        >
+          {focusPoints.map((item, index) => (
+            <SwiperSlide key={index}  >
+              <div
+                className=" shadow-lg rounded-xl overflow-hidden 
+                hover:shadow-2xl transition-all duration-500  mx-5 container "
+                 style={{
+        backgroundColor: dark ? '#0b0c0c' : 'white',
+        color: dark ? 'white' : 'black',
+            }}
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-5">
+                  <h4 className="font-['Playfair_Display'] text-xl font-semibold mb-2">
+                    {item.title}
+                  </h4>
+                  <p className="font-['Poppins'] text-gray-500 dark:text-gray-500 text-base leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+   
+      <p
+        data-aos="fade-up"
+        className="max-w-2xl mx-auto mt-14 mb-16 font-['Poppins'] 
+        text-gray-500 dark:text-gray-500 text-base md:text-lg leading-relaxed mt-5"
+      >
+        I’m always exploring new technologies and best practices to build meaningful,
+        high-quality digital experiences that make an impact.
+      </p>
+    </section>
+
 
 
 
@@ -287,6 +307,7 @@ lineHeight:'60px',
                 style={{ backgroundColor: buttonBg, width: `${item.perc}%` }}
               />
             </ProgressBar>
+            <p className='float-end pt-3'>{item.perc}%</p>
           </Box>
         ))}
       </div>
@@ -304,7 +325,7 @@ lineHeight:'60px',
 
       <Box className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 justify-items-center mt-5">
         {projects.map((items, index) => (
-          <Box key={index} data-aos="flip-up">
+          <Box key={index} data-aos="flip-up" className='mb-5'>
             <Card sx={{ maxWidth: 345, backgroundColor: dark ? '#111827' : 'white', color: dark ? 'white' : 'black' }}>
               <CardMedia component="img" alt={items.projtitle} height="140" image={items.img} />
               <CardContent>
