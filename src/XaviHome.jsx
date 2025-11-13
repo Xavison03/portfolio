@@ -84,7 +84,7 @@ const XaviHome = ({dark}) => {
               className='animate-bounce'
               onClick={() => navigate("/about")}
             >
-              About Me
+             Get to Know Me
             </Button>
           </div>
 
